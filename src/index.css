@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #FFF5F9;
+    color: #171717;
+    overscroll-behavior: none;
+  }
+
+  input, select, textarea {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .card-pink {
+    @apply bg-white border-2 border-[#171717] rounded-2xl shadow-offset;
+  }
+
+  .btn-pink {
+    @apply bg-pinkfanta-500 text-white border-2 border-[#171717] rounded-xl shadow-offset-sm font-bold active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150;
+  }
+
+  .btn-white {
+    @apply bg-white text-[#171717] border-2 border-[#171717] rounded-xl shadow-offset-sm font-bold active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150;
+  }
+
+  .input-pink {
+    @apply w-full bg-pinkfanta-50 border-2 border-[#171717] rounded-xl px-4 py-3 text-[#171717] font-semibold focus:outline-none focus:ring-2 focus:ring-pinkfanta-500 focus:border-pinkfanta-500 transition-all;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 px-2 py-1 transition-all duration-150 active:scale-95;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
